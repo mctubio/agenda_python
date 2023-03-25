@@ -101,12 +101,21 @@ class Agenda_Contactos:
         self.boton01.grid(column=3, row=6, padx=10, pady=10, columnspan=2)
 
     def guardar(self):
-        datos = (self.nombre_nuevo.get(), self.apellido_nuevo.get(), self.telefono_nuevo.get())
+        datos = (self.codigo_nuevo.get(), self.nombre_nuevo.get(), self.apellido_nuevo.get(), self.telefono_nuevo.get(), self.email_nuevo.get(), self.calle_nuevo.get(), 
+                 self.num_calle_nuevo.get(), self.piso_nuevo.get(), self.depto_nuevo.get(), self.comentario_nuevo.get())
         self.contacto1.agendado(datos)
         mb.showinfo('Información', 'Nuevo contacto guardado')
+        self.codigo_nuevo.set('')
         self.nombre_nuevo.set('')
         self.apellido_nuevo.set('')
         self.telefono_nuevo.set('')
+        self.email_nuevo.set('')
+        self.calle_nuevo.set('')
+        self.num_calle_nuevo.set('')
+        self.piso_nuevo.set('')
+        self.depto_nuevo.set('')
+        self.comentario_nuevo.set('')
+        
 
     def buscar_por_apellido(self):
         self.pagina02 = ttk.Frame(self.cuaderno)
